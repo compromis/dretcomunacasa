@@ -1,11 +1,13 @@
 <script setup>
-import { SectionsProposals } from '#components'
+/* Stats */
+const config = useRuntimeConfig()
+const { data: stats } = await useFetch(config.public.apiBase + 'stats')
 
 /* SEO Metatags */
-const title = 'Dret com una casa'
+const title = 'Un dret com una casa - JovesPV - Compromís'
 const ogTitle = title
 const description = 'Descripcio'
-const ogImage = ''
+const ogImage = config.public.url + '/post/og-image.jpg'
 const keywords = ''
 const twitterSite = 'jovespv'
 useServerSeoMeta({
@@ -29,8 +31,8 @@ useHead({ title })
     <SectionsHeader />
     <SectionsIntro />
     <div class="bg-gradient-to-b from-blue to-orange">
-      <SectionsLetter />
-      <SectionsShare />
+      <SectionsLetter :count="stats.signatures" />
+      <SectionsShare :count="stats.shares" />
     </div>
     <div class="bg-orange">
       <SectionsProposals />

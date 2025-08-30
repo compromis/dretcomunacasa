@@ -6,10 +6,12 @@
       </h2>
       <div class="lg:w-64 border-2 border-white mt-6 flex gap-2">
         <div class="text-xl p-3 mt-1">
-          <Icon name="ri:send-plane-fill" />
+          <Icon name="mingcute:send-plane-line" />
         </div>
         <div class="p-3">
-          <p class="text-xl animated-number">345</p>
+          <p class="text-xl animated-number">
+            {{ shares }}
+          </p>
           <p class="text-base leading-[1.1]">persones ja ho han compartit</p>
         </div>
       </div>
@@ -20,25 +22,29 @@
           <img src="/post/post-ig.jpg" alt="MAZÓN POT LIMITAR EL PREU DEL LLOGUER PERÒ NO FA RES" class="w-full max-h-[50vh] object-fit" />
         </div>
         <div class="flex gap-site flex-wrap justify-center border-t border-slate-300 p-site">
-          <a href="" class="share-button ig" :style="{ '--rotate-to': '1deg' }">
-            <Icon name="fa7-brands:instagram" class="icon" />
-            Instagram Stories
+          <a :href="links.igStories" download class="share-button ig" :style="{ '--rotate-to': '1deg' }" @click="logShare('ig_stories')">
+            <Icon name="humbleicons:mobile" class="icon" />
+            Stories
           </a>
-          <a href="" class="share-button ig" :style="{ '--rotate-to': '2deg' }">
+          <a :href="links.igPost" download class="share-button ig" :style="{ '--rotate-to': '2deg' }" @click="logShare('ig_post')">
             <Icon name="fa7-brands:instagram" class="icon" />
             Instagram Post
           </a>
-          <a href="" class="share-button wa" :style="{ '--rotate-to': '-1deg' }">
+          <a :href="links.whatsApp" class="share-button wa" :style="{ '--rotate-to': '-1deg' }" @click="logShare('whatsapp')">
             <Icon name="fa7-brands:whatsapp" class="icon" />
             WhatsApp
           </a>
-          <a href="" class="share-button x" :style="{ '--rotate-to': '1deg' }" aria-label="X / Twitter">
+          <a :href="links.x" class="share-button x" :style="{ '--rotate-to': '1deg' }" aria-label="X / Twitter" @click="logShare('x')">
             <Icon name="fa7-brands:x-twitter" class="icon" />
           </a>
-          <a href="" class="share-button other" :style="{ '--rotate-to': '-2deg' }">
-            <Icon name="famicons:share-outline" class="icon" />
+          <a v-if="!!canShare" href="#" class="share-button other" :style="{ '--rotate-to': '-2deg' }" @click.prevent="share">
+            <Icon name="humbleicons:share" class="icon" />
             Més...
           </a>
+        </div>
+        <div v-if="showDownloadedMessage" class="p-site bg-yellow font-extrabold flex gap-1 items-center" aria-live="polite">
+          <Icon name="humbleicons:download" />
+          S'ha descarregat la imatge per a compartir en stories, Instagram...
         </div>
       </div>
     </div>
@@ -46,6 +52,55 @@
 </template>
 
 <script lang="ts" setup>
+const props = defineProps({
+  count: {
+    type: Number,
+    required: false
+  }
+})
+
+const config = useRuntimeConfig()
+
+const shares = ref(props.count || 0)
+const showDownloadedMessage = ref(false)
+
+const url = config.public.url
+const text = encodeURIComponent('Mazón pot limitar el preu del lloguer però no fa res. Jo ja he signat per exigir-ho. Fes-ho tu també: ')
+
+const links = computed(() => ({
+  igStories: '/post/story-ig.jpg',
+  igPost: '/post/post-ig.jpg',
+  whatsApp: `https://api.whatsapp.com/send?text=${text}${url}`,
+  x: `https://x.com/intent/post?text=${text}&url=${url}&hashtags=MazónDimissió`
+}))
+
+const payload = {
+  title: 'Un dret com una casa - Joves PV - Compromís',
+  text,
+  url,
+  image: url + '/post/og-image.jpg'
+}
+
+const canShare = computed(() => window && window.navigator.share)
+const share = async () => {
+  if (!!canShare.value) {
+    await Promise.all([navigator.share(payload), logShare('native')])
+  }
+}
+
+async function logShare (platform: string) {
+  const response = await $fetch(config.public.apiBase + 'share', {
+    method: 'POST',
+    body: {
+      platform
+    }
+  })
+  shares.value = response.shares
+  if (platform.startsWith('ig')) {
+    showDownloadedMessage.value = true
+  }
+}
+
 const { $gsap } = useNuxtApp()
 const card = ref(null)
 

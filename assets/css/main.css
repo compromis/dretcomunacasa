@@ -20,6 +20,7 @@
   --color-white: #fff;
   --color-orange: #DE5413;
   --color-blue: #1F4C90;
+  --color-yellow: #f3b955;
   --shadow-red: .75rem .75rem 0 var(--color-red-shadow);
   --shadow-blue: .75rem .75rem 0 var(--color-blue-shadow);
   --shadow-yellow: .75rem .75rem 0 var(--color-yellow-shadow);

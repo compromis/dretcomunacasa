@@ -6,16 +6,18 @@
       </h2>
       <div class="lg:w-64 border-2 border-white mt-6 flex gap-2">
         <div class="text-xl p-3 mt-1">
-          <Icon name="ri:send-plane-fill" />
+          <Icon name="mingcute:send-plane-line" />
         </div>
         <div class="p-3">
-          <p class="text-xl animated-number">345</p>
+          <p class="text-xl animated-number">
+            {{ signatures }}
+          </p>
           <p class="text-base leading-[1.1]">signatures rebudes i correus enviats a Carlos Mazón</p>
         </div>
       </div>
     </div>
     <div class="xl:col-span-4">
-      <form ref="card" @submit.prevent="submitForm" class="letter bg-white text-black text-base lg:rotate-1 max-w-[800px] mx-auto">
+      <form v-if="!submitted" ref="card" @submit.prevent="submit" class="letter bg-white text-black text-base lg:rotate-1 max-w-[800px] mx-auto">
         <div class="px-site py-4 border-b border-slate-300">
           Per a: <strong class="me-4">Carlos Mazón</strong>
           <a href="mailto:presidencia@gva.es" class="bg-slate-200 py-1 px-2 rounded-lg whitespace-nowrap">
@@ -40,26 +42,80 @@
             </label>
           </div>
           <div class="flex lg:justify-end">
-            <button type="submit" class="flex items-center gap-2 bg-orange text-white font-extrabold py-1 px-3 text-md cursor-pointer hover:scale-110 hover:-rotate-3 transition">
+            <button
+              type="submit"
+              :class="[
+                'flex items-center gap-2 bg-orange text-white font-extrabold py-1 px-3 text-md cursor-pointer hover:scale-110 hover:-rotate-3 transition',
+                { 'opacity-50': submitting }
+              ]"
+              :disabled="submitting"
+            >
               Signa i envia
               <Icon name="ri:send-plane-fill" />
             </button>
           </div>
         </div>
       </form>
+      <div v-else class="bg-white text-black">
+        <div class="p-site text-balance">
+          <h2 class="text-xl">
+            Correu enviat!
+          </h2>
+          <p class="text-md mb-2">
+            Gràcies per ajudar-nos a exigir a Mazón que aplique la llei del lloguer.
+          </p>
+          <p class="text-md">
+            Comparteix la campanya entre els teus amics i amigues perquè arribe a més gent!
+          </p>
+        </div>
+
+        <div class="border-t border-slate-300 p-site">
+          <a href="#share" class="inline-flex font-extrabold text-md text-white bg-orange py-2 px-4 hover:scale-125 hover:-rotate-3 transition">
+            Comparteix la campanya
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
 <script lang="ts" setup>
+const props = defineProps({
+  count: {
+    type: Number,
+    required: false
+  }
+})
+
+const config = useRuntimeConfig()
+const submitting = ref(false)
+const submitted = ref(false)
+const errors = ref(null)
+
 const form = reactive({
   name: '',
   terms: false,
   control: ''
 })
 
-function submitForm() {
+const signatures = ref(props.count || 0)
 
+async function submit () {
+  if (submitting.value) return
+  submitting.value = true
+
+  try {
+    const response = await $fetch(config.public.apiBase + 'sign', {
+      method: 'POST',
+      body: form
+    })
+    submitted.value = true
+    signatures.value = response.signatures
+  } catch (e) {
+    errors.value = e
+  } finally {
+    submitting.value = false
+  }
 }
 
 const { $gsap } = useNuxtApp()

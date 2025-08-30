@@ -7,7 +7,8 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      baseUrl: 'https://dretcomunacasa.com',
+      url: 'https://dretcomunacasa.com',
+      apiBase: process.env.NUXT_PUBLIC_API_BASE || 'https://forms.compromis.net/api/forms/dretcomunacasa/'
     }
   },
 
