@@ -21,7 +21,7 @@
         <div class="w-fit mx-auto p-site">
           <img src="/post/post-ig.jpg" alt="MAZÓN POT LIMITAR EL PREU DEL LLOGUER PERÒ NO FA RES" class="w-full max-h-[50vh] object-fit" />
         </div>
-        <div class="flex gap-site flex-wrap justify-center border-t border-slate-300 p-site">
+        <div class="flex gap-2 lg:gap-4 flex-wrap justify-center border-t border-slate-300 p-site">
           <a :href="links.igStories" download class="share-button ig" :style="{ '--rotate-to': '1deg' }" @click="logShare('ig_stories')">
             <Icon name="humbleicons:mobile" class="icon" />
             Stories
@@ -136,11 +136,11 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .share-button {
-  font-size: vafr(--text-md);
+  font-size: var(--text-md);
   background-color: var(--color-blue);
   color: var(--color-white);
   font-weight: 900;
-  padding: .5em 1em;
+  padding: .25em .5em;
   transition: .25s ease;
   display: flex;
   gap: .5em;
