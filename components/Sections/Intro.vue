@@ -1,5 +1,5 @@
 <template>
-  <div class="p-site grid xl:grid-cols-2 gap-12 xl:max-w-[1800px] mx-auto">
+  <section id="intro" class="p-site grid xl:grid-cols-2 gap-12 xl:max-w-[1800px] mx-auto">
     <BlocksCard id="card1">
       El segon semestre de 2024, les joves d’entre 16 i 29 anys van destinar <UtilsAnnotated>més del 90% del seu sou a pagar el lloguer</UtilsAnnotated>.
     </BlocksCard>
@@ -20,10 +20,10 @@
       Espanya té <UtilsAnnotated type="highlight">només el 2,5% d’habitatge social</UtilsAnnotated> sobre el total del parc residencial front a la Mitjana europea: 9,3%
 
       <template #source>
-        Font: <a href="https://www.housingeurope.eu/resource-1833/the-state-of-housing-in-the-eu-2023">Informe anual de Housing Europe.</a>
+        Font: <a href="https://www.housingeurope.eu/resource-1833/the-state-of-housing-in-the-eu-2023" class="underline">Informe anual de Housing Europe</a>
       </template>
     </BlocksCard>
-  </div>
+  </section>
 </template>
 
 <script lang="ts" setup>

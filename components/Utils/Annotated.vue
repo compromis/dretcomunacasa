@@ -32,8 +32,8 @@ const props = defineProps({
 const animateAnnotation = () => {
   if (!hasAnimated.value) {
     const color = props.color === 'blue' ? '#cee8ef' : props.type === 'highlight' ? '#f3b955' : '#f4520b'
-    const highlighted = ['highlight', 'crossed-off', 'strike-through'].includes(props.type) ? { color } : {}
-    animation.value = annotate(annotated.value, { type: props.type, strokeWidth: 4, multiline: true, ...highlighted })
+    const highlighted = ['highlight', 'crossed-off', 'strike-through'].includes(props.type) ? { color } : { color: props.color === 'highlight' ? '#f3b955' : '#DE5413' }
+    animation.value = annotate(annotated.value, { type: props.type, strokeWidth: 8, multiline: true, ...highlighted })
     setTimeout(() => { animation.value.show() }, props.delay * 1000)
   }
 

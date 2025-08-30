@@ -19,12 +19,19 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxt/eslint',
     '@nuxt/icon',
+    '@nuxtjs/google-fonts',
   ],
 
   vite: {
     plugins: [
       tailwindcss(),
     ],
+  },
+
+  googleFonts: {
+    families: {
+      'Instrument Serif': [400],
+    }
   },
 
   i18n: {

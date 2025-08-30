@@ -1,4 +1,6 @@
 <script setup>
+import { SectionsProposals } from '#components'
+
 /* SEO Metatags */
 const title = 'Dret com una casa'
 const ogTitle = title
@@ -26,5 +28,12 @@ useHead({ title })
   <main>
     <SectionsHeader />
     <SectionsIntro />
+    <div class="bg-gradient-to-b from-blue to-orange">
+      <SectionsLetter />
+      <SectionsShare />
+    </div>
+    <div class="bg-orange">
+      <SectionsProposals />
+    </div>
   </main>
 </template>
