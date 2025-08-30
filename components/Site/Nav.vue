@@ -26,7 +26,7 @@ watch(section, (newSection) => {
     <nav class="campaign-nav">
       <div class="flex gap-site w-full md:w-auto justify-between">
         <a href="https://jovespv.org" aria-label="JovesPV - Compromís" class="logo compromis">
-          <SiteLogo /> {{ section }}
+          <SiteLogo />
         </a>
       </div>
       <div class="campaign-name flex text-md font-extrabold leading-[1] text-right">
