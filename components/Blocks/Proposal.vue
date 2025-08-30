@@ -1,7 +1,7 @@
 <template>
   <article class="grid grid-cols-12 gap-site">
     <div class="col-span-12 lg:col-span-3">
-      <h3 class="font-extrabold text-lg xl:text-xl leading-[1.1] text-balance sticky top-24">
+      <h3 class="font-extrabold text-xl leading-[1.1] text-balance sticky top-24">
         <slot name="heading" />
       </h3>
     </div>

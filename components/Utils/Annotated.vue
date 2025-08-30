@@ -48,10 +48,10 @@ onMounted(() => {
   $gsap.to(annotated.value, {
     scrollTrigger: {
       trigger: annotated.value,
-      start: 'top bottom',
+      start: 'top 95%',
       toggleActions: "restart none none reverse",
       onToggle: () => {
-        setTimeout(() => animateAnnotation(), 1250)
+        setTimeout(() => animateAnnotation(), 1000)
       }
     }
   })

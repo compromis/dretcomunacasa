@@ -1,6 +1,6 @@
 <template>
-  <header id="header" class="header px-site pt-32">
-    <div class="w-fit mx-auto my-18 xl:my-24 text-center xl:text-left">
+  <header id="header" class="header px-site pt-24 lg:pt-32">
+    <div class="w-fit mx-auto my-6 xl:my-24 text-center xl:text-left">
       <h1 class="font-headline uppercase font-normal leading-[.9]">
         Mazón&nbsp;no fa&nbsp;res
       </h1>
@@ -19,7 +19,7 @@
 <style lang="scss" scoped>
 .header {
   h1 {
-    font-size: clamp(7.5rem, 10vi + 1.5rem, 19rem);
+    font-size: clamp(6rem, 10vi + 1.5rem, 19rem);
     letter-spacing: 0;
   }
 }

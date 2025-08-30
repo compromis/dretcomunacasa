@@ -1,8 +1,12 @@
 <template>
-  <section class="px-site py-12 lg:py-32 xl:max-w-[1800px] mx-auto">
+  <section class="proposals px-site py-12 lg:py-32 xl:max-w-[1800px] mx-auto">
     <div class="header">
-      <h2 class="font-headline uppercase font-normal leading-[.9]">Mereixem una casa</h2>
-      <p class="font-extrabold text-md xl:text-lg leading-snug text-balance xl:-mt-4">
+      <h2 class="font-headline uppercase font-normal leading-[.9]">
+        <span class="inline-block">Mereixem</span> {{ ' ' }}
+        <span class="inline-block">una</span> {{ ' ' }}
+        <span class="inline-block">casa</span>
+      </h2>
+      <p class="font-extrabold text-lg leading-snug text-balance xl:-mt-4">
         Com ho farem?
       </p>
     </div>
@@ -98,12 +102,29 @@ import serLogo from '~/assets/images/headlines/ser.svg'
 import lamarinaLogo from '~/assets/images/headlines/marinaplaza.svg'
 import valenciaplazaLogo from '~/assets/images/headlines/valenciaplaza.svg'
 import elperiodicLogo from '~/assets/images/headlines/elperiodic.svg'
+
+const { $gsap } = useNuxtApp()
+
+onMounted(() => {
+  $gsap.from('.proposals .header h2 span', {
+    opacity: 0,
+    y: -120,
+    ease: 'Power4.easeIn',
+    duration: .5,
+    stagger: .5,
+    scrollTrigger: {
+      trigger: '.proposals .header h2',
+      start: 'top bottom',
+      toggleActions: "restart none none reverse"
+    },
+  })
+})
 </script>
 
 <style lang="scss" scoped>
 .header {
   h2 {
-    font-size: clamp(7.5rem, 10vi + 1.5rem, 19rem);
+    font-size: clamp(6rem, 10vi + 1.5rem, 19rem);
     letter-spacing: 0;
   }
 }

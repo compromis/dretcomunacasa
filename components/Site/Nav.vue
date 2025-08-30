@@ -21,7 +21,7 @@ onMounted(() => {
           <SiteLogo />
         </a>
       </div>
-      <div class="campaign-name flex text-md font-extrabold">
+      <div class="campaign-name flex text-md font-extrabold leading-[1] text-right">
         Un dret com una casa
       </div>
     </nav>
@@ -53,7 +53,7 @@ onMounted(() => {
       }
 
       &.compromis svg {
-        height: 1.6rem;
+        height: 1.35rem;
       }
     }
   }
@@ -74,10 +74,9 @@ onMounted(() => {
 }
 
 @media (max-width: 46rem) {
-  .pax {
+  .campaign {
     &-nav {
       position: relative;
-      flex-direction: column;
 
       .logo {
         svg {
@@ -85,8 +84,14 @@ onMounted(() => {
         }
 
         &.compromis svg {
-          height: 1.25rem;
+          height: 1rem;
         }
+      }
+    }
+
+    &-header {
+      &::before {
+        display: none;
       }
     }
   }
