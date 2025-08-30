@@ -115,12 +115,6 @@ watch(section, (newSection) => {
         }
       }
     }
-
-    &-header {
-      &::before {
-        display: none;
-      }
-    }
   }
 }
 </style>
