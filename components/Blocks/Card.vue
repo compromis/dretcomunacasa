@@ -6,7 +6,17 @@
       '--rotate': `${rotateTo}deg`,
     }"
   >
-    <slot />
+    <div v-if="$slots.chart" class="grid md:grid-cols-[4fr_1fr] gap-1">
+      <div class="tracking-tight">
+        <slot />
+      </div>
+      <div class="hidden md:block">
+        <slot name="chart" />
+      </div>
+    </div>
+    <div v-else class="tracking-tight">
+      <slot />
+    </div>
 
     <div v-if="$slots.source" class="mt-4 text-base font-medium opacity-75">
       <slot name="source" />

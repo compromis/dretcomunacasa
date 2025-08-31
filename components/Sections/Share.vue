@@ -145,6 +145,7 @@ onMounted(() => {
   display: flex;
   gap: .5em;
   align-items: center;
+  letter-spacing: -.025em;
 
   &:hover {
     background-color: var(--color-orange);

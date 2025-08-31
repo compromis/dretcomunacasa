@@ -2,6 +2,10 @@
   <section id="intro" class="p-site grid xl:grid-cols-2 gap-12 xl:max-w-[1800px] mx-auto">
     <BlocksCard id="card1">
       El segon semestre de 2024, les joves d’entre 16 i 29 anys van destinar <UtilsAnnotated>més del 90% del seu sou a pagar el lloguer</UtilsAnnotated>.
+
+      <template #chart>
+        <img src="~/assets/images/charts/rent.svg" alt="Gràfica de donut, 90% del sou dedicat al lloguer, 10% a la resta" class="w-full" />
+      </template>
     </BlocksCard>
     <BlocksCard id="card2">
       L’últim semestre de 2024 es va tancar amb una <UtilsAnnotated type="highlight" :delay="0.2">taxa d’emancipació del 14,8%</UtilsAnnotated>, la mínima des de que es te registre.
@@ -20,16 +24,8 @@
       Espanya té <UtilsAnnotated type="highlight" :delay="0.8">només el 2,5% d’habitatge social</UtilsAnnotated> sobre el total del parc residencial front a la Mitjana europea: 9,3%
 
       <template #source>
-        Font: <a href="https://www.housingeurope.eu/resource-1833/the-state-of-housing-in-the-eu-2023" class="underline">Informe anual de Housing Europe</a>
+        Font: <a href="https://www.housingeurope.eu/resource-1833/the-state-of-housing-in-the-eu-2023" target="_blank" class="underline">Informe anual de Housing Europe</a>
       </template>
     </BlocksCard>
   </section>
 </template>
-
-<script lang="ts" setup>
-
-</script>
-
-<style>
-
-</style>
