@@ -1,5 +1,5 @@
 <template>
-  <section id="intro" class="p-site grid xl:grid-cols-2 gap-12 xl:max-w-[1800px] mx-auto">
+  <section id="intro" class="p-site flex flex-wrap lg:[&>*]:basis-[48%] justify-center gap-12 xl:max-w-[1800px] mx-auto">
     <BlocksCard id="card1">
       El segon semestre de 2024, les joves d’entre 16 i 29 anys van destinar <UtilsAnnotated>més del 90% del seu sou a pagar el lloguer</UtilsAnnotated>.
 
