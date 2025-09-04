@@ -82,6 +82,9 @@
               <Icon name="ri:send-plane-fill" />
             </button>
           </div>
+          <div v-if="errors" class="col-span-2 bg-red-200 py-2 px-4 font-bold text-red-800">
+            Hi ha hagut un error enviant el formulari. Torna-ho a intentar més tard.
+          </div>
         </div>
       </form>
       <div v-else class="bg-white text-black">
@@ -141,8 +144,8 @@ async function submit () {
     })
     submitted.value = true
     signatures.value = response.signatures
-  } catch (e) {
-    errors.value = e
+  } catch (err) {
+    errors.value = err.data
   } finally {
     submitting.value = false
   }
