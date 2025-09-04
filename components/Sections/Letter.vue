@@ -18,16 +18,44 @@
     </div>
     <div class="xl:col-span-4">
       <form v-if="!submitted" ref="card" @submit.prevent="submit" class="letter bg-white text-black text-base lg:rotate-1 max-w-[800px] mx-auto">
-        <div class="px-site py-4 border-b border-slate-300">
-          Per a: <strong class="me-4">Carlos Mazón</strong>
-          <a href="mailto:presidencia@gva.es" class="bg-slate-200 py-1 px-2 rounded-lg whitespace-nowrap">
-            presidencia@gva.es
-          </a>
+        <div class="px-site py-2 border-b border-slate-300 grid grid-cols-[7rem_1fr] gap-2 items-center">
+          <div class="text-right">
+            Per a
+          </div>
+          <div>
+            <a href="mailto:presidencia@gva.es" class="bg-slate-200 py-1 px-2 rounded-lg whitespace-nowrap inline-block">
+              <strong class="me-2 pe-2 border-r border-slate-400">Carlos Mazón</strong> presidencia@gva.es
+            </a>
+          </div>
+        </div>
+        <div class="px-site py-2 border-b border-slate-300 grid grid-cols-[7rem_1fr] gap-2 items-center">
+          <label class="text-right">
+            De
+          </label>
+          <div>
+            <input type="email" v-model="form.email" required class="bg-slate-200 py-1 px-2 font-bold min-w-96 field-sizing-content rounded-lg placeholder-slate-500 focus:outline-orange h-[2em]" placeholder="Escriu el teu e-mail" aria-label="El teu e-mail" maxlength="125" />
+          </div>
+        </div>
+        <div class="px-site py-2 border-b border-slate-300 grid grid-cols-[7rem_1fr] gap-2 items-center">
+          <label class="text-right">
+            Nom
+          </label>
+          <div>
+            <input type="text" v-model="form.name" required class="bg-slate-200 py-1 px-2 font-bold min-w-96 field-sizing-content rounded-lg placeholder-slate-500 focus:outline-orange h-[2em]" placeholder="Escriu el teu nom" aria-label="El teu nom" maxlength="125" />
+          </div>
+        </div>
+        <div class="px-site py-2 border-b border-slate-300 grid grid-cols-[7rem_1fr] gap-2 items-center">
+          <label class="text-right">
+            Codi postal
+          </label>
+          <div>
+            <input type="text" v-model="form.postal_code" pattern="\d*" class="bg-slate-200 py-1 px-2 font-bold min-w-64 field-sizing-content rounded-lg placeholder-slate-500 focus:outline-orange h-[2em]" placeholder="Escriu el teu codi postal" maxlength="5" />
+          </div>
         </div>
         <div class="px-site py-4">
           <p>Bon dia, Carlos Mazón,</p>
           <p>Soc
-            <input type="text" v-model="form.name" required class="bg-slate-200 py-1 px-2 font-bold min-w-64 field-sizing-content rounded-lg placeholder-slate-500 focus:outline-orange h-[2em]" placeholder="Escriu el teu nom" aria-label="El teu nom" maxlength="65" />
+            {{ form.name || '__________' }}
           , una persona jove afectada per l'actual situació del lloguer al País Valencià.</p>
           <p>Com a president de la Generalitat Valenciana (tant de bo no ho fores), des de l’any 2023 tens la possibilitat d'aplicar la Llei d’Habitatge per a posar límit als preus del lloguer, però no ho fas. </p>
           <p>Això està provocant que moltes persones com jo haguem de destinar una part excessiva del nostre sou a pagar l'habitatge, vivint en una situació d'inestabilitat i precarietat constant.</p>
@@ -94,6 +122,8 @@ const errors = ref(null)
 
 const form = reactive({
   name: '',
+  email: '',
+  postal_code: '',
   terms: false,
   control: ''
 })

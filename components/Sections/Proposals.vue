@@ -13,24 +13,26 @@
     <div class="flex flex-col gap-24 mt-24">
       <BlocksProposal>
         <template #heading>
-          Per lluitar contra el despoblament
+          Per poder viure en els nostres pobles
         </template>
         <template #points>
-          <p>Vius en un poble que es buida? No volem marxar, volem quedar-nos.</p>
+          <p>Vius en una ciutat amb lloguers abusius? Emancipar-se no pot ser un luxe.</p>
           <ul>
-            <li>Ajudes per rehabilitar habitatges i destinar-los a <UtilsAnnotated color="highlight">lloguer jove assequible</UtilsAnnotated></li>
-            <li>Suport per quedar-te o tornar al poble</li>
+            <li><UtilsAnnotated color="highlight">Aplicar la Llei d’Habitatge</UtilsAnnotated>: limitar el preu del lloguer</li>
+            <li>Declarar zones tensionades</li>
+            <li>Crear un <UtilsAnnotated color="highlight">parc públic de lloguer jove</UtilsAnnotated></li>
+            <li>Ajudes directes al lloguer</li>
           </ul>
         </template>
         <template #headlines>
-          <BlocksHeadline :source="['Safor Guia', saforguiaLogo]" url="https://saforguia.com/art/77213/almisera-comprara-y-reformara-una-casa-para-destinarla-a-alquiler-para-jovenes">
-            Almiserà comprará y reformará una casa para destinarla a <UtilsAnnotated>alquiler para jóvenes</UtilsAnnotated>
+          <BlocksHeadline :source="['La Marin Plaça', lamarinaLogo]" url="https://lamarina.eldiario.es/ca/2024/12/13/denia-donara-incentius-a-la-rehabilitacio-dhabitatges-buits-per-facilitarne-leixida-al-mercat/">
+            Dénia donarà incentius a la rehabilitació d’habitatges buits per facilitar-ne l’eixida al mercat
           </BlocksHeadline>
-          <BlocksHeadline :source="['Castellón Plaza', castellonplazaLogo]" url="https://castellonplaza.com/castellonplaza/comarcas/betxi-dota-con-10000-euros-una-convocatoria-de-ayudas-para-rehabilitar-fachadas-del-casco-antiguo">
-            Betxí dota con <UtilsAnnotated type="highlight">10.000 euros</UtilsAnnotated> una convocatoria de ayudas para rehabilitar fachadas del casco antiguo
+          <BlocksHeadline :source="['valenciaplaza', valenciaplazaLogo]" url="https://valenciaplaza.com/valenciaplaza/gandia-destina-ajudes-fins-1250-euros-propietaris-posen-lloguer-habitatges-buits">
+            Gandia destina ajudes de fins a <UtilsAnnotated type="highlight">1.250 euros</UtilsAnnotated> per als propietaris que posen en lloguer habitatges buits
           </BlocksHeadline>
-          <BlocksHeadline :source="['COPE', copeLogo]" url="https://www.cope.es/emisoras/comunidad-valenciana/castellon-provincia/castellon/noticias/detener-despoblacion-una-prioridad-para-castellon-20240202_3125140#google_vignette">
-            Detener la despoblación es una prioridad para Castellón
+          <BlocksHeadline :source="['elperiodic', elperiodicLogo]" url="https://www.elperiodic.com/val/almenara/compromis-impulsa-creacio-duna-borsa-dhabitatge-almenara_1022351">
+            Compromís impulsa la creació d’una <UtilsAnnotated type="highlight">borsa d’habitatge</UtilsAnnotated> a Almenara
           </BlocksHeadline>
         </template>
       </BlocksProposal>
@@ -66,26 +68,24 @@
       </BlocksProposal>
       <BlocksProposal>
         <template #heading>
-          Per poder viure en els nostres pobles
+          Per lluitar contra el despoblament
         </template>
         <template #points>
-          <p>Vius en una ciutat amb lloguers abusius? Emancipar-se no pot ser un luxe.</p>
+          <p>Vius en un poble que es buida? No volem marxar, volem quedar-nos.</p>
           <ul>
-            <li><UtilsAnnotated color="highlight">Aplicar la Llei d’Habitatge</UtilsAnnotated>: limitar el preu del lloguer</li>
-            <li>Declarar zones tensionades</li>
-            <li>Crear un <UtilsAnnotated color="highlight">parc públic de lloguer jove</UtilsAnnotated></li>
-            <li>Ajudes directes al lloguer</li>
+            <li>Ajudes per rehabilitar habitatges i destinar-los a <UtilsAnnotated color="highlight">lloguer jove assequible</UtilsAnnotated></li>
+            <li>Suport per quedar-te o tornar al poble</li>
           </ul>
         </template>
         <template #headlines>
-          <BlocksHeadline :source="['La Marin Plaça', lamarinaLogo]" url="https://lamarina.eldiario.es/ca/2024/12/13/denia-donara-incentius-a-la-rehabilitacio-dhabitatges-buits-per-facilitarne-leixida-al-mercat/">
-            Dénia donarà incentius a la rehabilitació d’habitatges buits per facilitar-ne l’eixida al mercat
+          <BlocksHeadline :source="['Safor Guia', saforguiaLogo]" url="https://saforguia.com/art/77213/almisera-comprara-y-reformara-una-casa-para-destinarla-a-alquiler-para-jovenes">
+            Almiserà comprará y reformará una casa para destinarla a <UtilsAnnotated>alquiler para jóvenes</UtilsAnnotated>
           </BlocksHeadline>
-          <BlocksHeadline :source="['valenciaplaza', valenciaplazaLogo]" url="https://valenciaplaza.com/valenciaplaza/gandia-destina-ajudes-fins-1250-euros-propietaris-posen-lloguer-habitatges-buits">
-            Gandia destina ajudes de fins a <UtilsAnnotated type="highlight">1.250 euros</UtilsAnnotated> per als propietaris que posen en lloguer habitatges buits
+          <BlocksHeadline :source="['Castellón Plaza', castellonplazaLogo]" url="https://castellonplaza.com/castellonplaza/comarcas/betxi-dota-con-10000-euros-una-convocatoria-de-ayudas-para-rehabilitar-fachadas-del-casco-antiguo">
+            Betxí dota con <UtilsAnnotated type="highlight">10.000 euros</UtilsAnnotated> una convocatoria de ayudas para rehabilitar fachadas del casco antiguo
           </BlocksHeadline>
-          <BlocksHeadline :source="['elperiodic', elperiodicLogo]" url="https://www.elperiodic.com/val/almenara/compromis-impulsa-creacio-duna-borsa-dhabitatge-almenara_1022351">
-            Compromís impulsa la creació d’una <UtilsAnnotated type="highlight">borsa d’habitatge</UtilsAnnotated> a Almenara
+          <BlocksHeadline :source="['COPE', copeLogo]" url="https://www.cope.es/emisoras/comunidad-valenciana/castellon-provincia/castellon/noticias/detener-despoblacion-una-prioridad-para-castellon-20240202_3125140#google_vignette">
+            Detener la despoblación es una prioridad para Castellón
           </BlocksHeadline>
         </template>
       </BlocksProposal>
