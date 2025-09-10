@@ -18,8 +18,8 @@
     </div>
     <div class="xl:col-span-4">
       <form v-if="!submitted" ref="card" @submit.prevent="submit" class="letter bg-white text-black text-base lg:rotate-1 max-w-[800px] mx-auto">
-        <div class="px-site py-2 border-b border-slate-300 grid grid-cols-[5.5rem_1fr] lg:grid-cols-[7rem_1fr] gap-2 items-center">
-          <div class="text-right">
+        <div class="px-3 lg:px-site py-2 border-b border-slate-300 grid lg:grid-cols-[9rem_1fr] gap-2 items-center">
+          <div class="lg:text-right">
             Per a
           </div>
           <div>
@@ -28,45 +28,45 @@
             </a>
           </div>
         </div>
-        <div class="px-site py-2 border-b border-slate-300 grid grid-cols-[5.5rem_1fr] lg:grid-cols-[7rem_1fr] gap-2 items-center">
-          <label class="text-right">
+        <div class="px-3 lg:px-site py-2 border-b border-slate-300 grid lg:grid-cols-[9rem_1fr] gap-2 items-center">
+          <label class="lg:text-right">
             De
           </label>
           <div>
             <input type="email" v-model="form.email" required class="bg-slate-200 py-1 px-2 font-bold w-full lg:w-auto lg:min-w-96 field-sizing-content rounded-lg placeholder-slate-500 focus:outline-orange h-[2em]" placeholder="Escriu el teu e-mail" aria-label="El teu e-mail" maxlength="125" />
           </div>
         </div>
-        <div class="px-site py-2 border-b border-slate-300 grid grid-cols-[5.5rem_1fr] lg:grid-cols-[7rem_1fr] gap-2 items-center">
-          <label class="text-right">
-            Nom
+        <div class="px-3 lg:px-site py-2 border-b border-slate-300 grid lg:grid-cols-[9rem_1fr] gap-2 items-center">
+          <label class="lg:text-right">
+            Nom i cognoms
           </label>
           <div>
-            <input type="text" v-model="form.name" required class="bg-slate-200 py-1 px-2 font-bold w-full lg:w-auto lg:min-w-96 field-sizing-content rounded-lg placeholder-slate-500 focus:outline-orange h-[2em]" placeholder="Escriu el teu nom" aria-label="El teu nom" maxlength="125" />
+            <input type="text" v-model="form.name" required class="bg-slate-200 py-1 px-2 font-bold w-full lg:w-auto lg:min-w-96 field-sizing-content rounded-lg placeholder-slate-500 focus:outline-orange h-[2em]" placeholder="Escriu el teu nom i cognoms" aria-label="El teu nom i cognoms" maxlength="125" />
           </div>
         </div>
-        <div class="px-site py-2 border-b border-slate-300 grid grid-cols-[5.5rem_1fr] lg:grid-cols-[7rem_1fr] gap-2 items-center">
-          <label class="text-right">
+        <div class="px-3 lg:px-site py-2 border-b border-slate-300 grid lg:grid-cols-[9rem_1fr] gap-2 items-center">
+          <label class="lg:text-right">
             Codi postal
           </label>
           <div>
             <input type="text" v-model="form.postal_code" pattern="\d*" class="bg-slate-200 py-1 px-2 font-bold w-full lg:w-auto lg:min-w-64 field-sizing-content rounded-lg placeholder-slate-500 focus:outline-orange h-[2em]" placeholder="Escriu el teu codi postal" maxlength="5" />
           </div>
         </div>
-        <div class="px-site py-4">
+        <div class="px-3 lg:px-site py-4">
           <p>Bon dia, Carlos Mazón,</p>
           <p>Soc
             {{ form.name || '__________' }}
           , una persona jove afectada per l'actual situació del lloguer al País Valencià.</p>
           <p>Com a president de la Generalitat Valenciana (tant de bo no ho fores), des de l’any 2023 tens la possibilitat d'aplicar la Llei d’Habitatge per a posar límit als preus del lloguer, però no ho fas. </p>
-          <p>Això està provocant que moltes persones com jo haguem de destinar una part excessiva del nostre sou a pagar l'habitatge, vivint en una situació d'inestabilitat i precarietat constant.</p>
-          <p>Per tot açò, exigisc que s’aplique el límit al preu del lloguer i, com no, #MazónDimissió.</p>
+          <p>Això està provocant que moltes persones com jo hàgem de destinar una part excessiva del nostre sou a pagar l'habitatge, vivint en una situació d'inestabilitat i precarietat constant.</p>
+          <p>Per tot açò, exigisc que s’aplique el límit al preu del lloguer i, per descomptat, #MazónDimissió.</p>
         </div>
         <input type="text" class="sr-only" aria-label="No escrigues res" v-model="form.control" />
         <div class="px-site py-4 border-t border-slate-300 grid lg:grid-cols-2 gap-site items-center">
           <div>
             <label class="text-sm flex gap-2 items-center">
               <input type="checkbox" v-model="form.terms" required class="scale-125 accent-orange" />
-              <span>Accepte la <a href="" class="underline">Política de privacitat de Compromís</a></span>
+              <span>Accepte la <a href="https://compromis.net/avis-legal/" class="underline" target="_blank">Política de privacitat de Compromís</a></span>
             </label>
           </div>
           <div class="flex lg:justify-end">

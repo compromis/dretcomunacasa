@@ -1,7 +1,7 @@
 <template>
   <section class="proposals px-site py-12 lg:py-32 xl:max-w-[1800px] mx-auto">
     <div class="header">
-      <h2 class="font-headline uppercase font-normal leading-[.9]">
+      <h2 class="heading font-headline uppercase font-normal leading-[.9]">
         <span class="inline-block">Mereixem</span> {{ ' ' }}
         <span class="inline-block">una</span> {{ ' ' }}
         <span class="inline-block">casa</span>
@@ -90,6 +90,14 @@
         </template>
       </BlocksProposal>
     </div>
+    <div class="header mt-12 lg:mt-24">
+      <a href="https://sumat.compromis.net/jovespv/" target="_blank" class="hover:underline underline-offset-[.4em] decoration-[.25em]">
+        <h3 class="text-5xl font-headline uppercase font-normal leading-[.9] !tracking-normal">
+          <span class="block">Per l’habitatge digne,</span>
+          <span class="block">suma’t a l’alternativa. </span>
+        </h3>
+      </a>
+    </div>
   </section>
 </template>
 
@@ -118,14 +126,30 @@ onMounted(() => {
       toggleActions: "restart none none reverse"
     },
   })
+
+  $gsap.from('.proposals .header h3 span', {
+    opacity: 0,
+    y: -120,
+    ease: 'Power4.easeIn',
+    duration: .5,
+    stagger: .5,
+    scrollTrigger: {
+      trigger: '.proposals .header h3',
+      start: 'top bottom',
+      toggleActions: "restart none none reverse"
+    },
+  })
 })
 </script>
 
 <style lang="scss" scoped>
-.header {
-  h2 {
-    font-size: clamp(6rem, 10vi + 1.5rem, 19rem);
-    letter-spacing: 0;
-  }
+.header h2 {
+  font-size: clamp(6rem, 10vi + 1.5rem, 19rem);
+  letter-spacing: 0;
+}
+
+.header h3 {
+  font-size: clamp(4rem, 6vi + 1rem, 14rem);
+  letter-spacing: 0;
 }
 </style>
