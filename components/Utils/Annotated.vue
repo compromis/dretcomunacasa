@@ -61,3 +61,9 @@ onBeforeUnmount(() => {
   animation.value && animation.value.remove()
 })
 </script>
+
+<style lang="scss">
+.rough-annotation {
+  mix-blend-mode: multiply;
+}
+</style>
