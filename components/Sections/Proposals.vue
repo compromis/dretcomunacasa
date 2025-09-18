@@ -94,7 +94,7 @@
       <a href="https://sumat.compromis.net/jovespv/" target="_blank" class="hover:underline underline-offset-[.4em] decoration-[.25em]">
         <h3 class="text-5xl font-headline uppercase font-normal leading-[.9] !tracking-normal">
           <span class="block">Per l’habitatge digne,</span>
-          <span class="block">suma’t a l’alternativa. </span>
+          <span class="block">suma’t a l’alternativa. <span class="font-sans font-extrabold">-&gt;</span></span>
         </h3>
       </a>
     </div>

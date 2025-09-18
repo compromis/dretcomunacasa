@@ -2,7 +2,7 @@
   <section id="signa" class="sign px-site py-12 lg:py-32 grid xl:grid-cols-6 gap-site xl:max-w-[1400px] mx-auto">
     <div class="xl:col-span-2">
       <h2 class="text-balance text-xl font-extrabold tracking-tight leading-[1.1]">
-        Signa perquè s’aplique la lleidel lloguer
+        Signa perquè s’aplique la llei del lloguer
       </h2>
       <div class="lg:w-64 border-2 border-white mt-6 flex gap-2">
         <div class="text-xl p-3 mt-1">
