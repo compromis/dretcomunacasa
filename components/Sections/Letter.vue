@@ -30,7 +30,7 @@
         </div>
         <div class="px-3 lg:px-site py-2 border-b border-slate-300 grid lg:grid-cols-[9rem_1fr] gap-2 items-center">
           <label class="lg:text-right">
-            De
+            E-mail
           </label>
           <div>
             <input type="email" v-model="form.email" required class="bg-slate-200 py-1 px-2 font-bold w-full lg:w-auto lg:min-w-96 field-sizing-content rounded-lg placeholder-slate-500 focus:outline-orange h-[2em]" placeholder="Escriu el teu e-mail" aria-label="El teu e-mail" maxlength="125" />
