@@ -20,7 +20,7 @@ useHead({
     ...head.value.link
   ],
   script: [
-    { src: 'https://cloud.umami.is/script.js', 'data-website-id': '', defer: true }
+    { src: 'https://cloud.umami.is/script.js', 'data-website-id': '7f5934c2-aa57-4174-8d35-e8bc8064c2ab', defer: true }
   ]
 })
 </script>
