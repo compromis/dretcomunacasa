@@ -42,6 +42,7 @@
           </label>
           <div>
             <input type="text" v-model="form.id_card" required class="bg-slate-200 py-1 px-2 font-bold w-full lg:w-auto lg:min-w-96 field-sizing-content rounded-lg placeholder-slate-500 focus:outline-orange h-[2em]" placeholder="El teu DNI o NIE" aria-label="El teu DNI o NIE" maxlength="125" />
+            <div class="text-red-600 font-extrabold text-sm">{{ errors?.errors?.hasOwnProperty('id_card') ? 'El format de DNI/NIE és invalid' : '' }}</div>
           </div>
         </div>
         <div class="px-3 lg:px-site py-2 border-b border-slate-300 grid lg:grid-cols-[9rem_1fr] gap-2 items-center">
@@ -57,7 +58,7 @@
             Telèfon
           </label>
           <div>
-            <input type="email" v-model="form.phone" class="bg-slate-200 py-1 px-2 font-bold w-full lg:w-auto lg:min-w-96 field-sizing-content rounded-lg placeholder-slate-500 focus:outline-orange h-[2em]" placeholder="El teu mòbil (opcional)" aria-label="El teu mòbil (opcional)" maxlength="125" />
+            <input type="tel" v-model="form.phone" class="bg-slate-200 py-1 px-2 font-bold w-full lg:w-auto lg:min-w-96 field-sizing-content rounded-lg placeholder-slate-500 focus:outline-orange h-[2em]" placeholder="El teu mòbil (opcional)" aria-label="El teu mòbil (opcional)" maxlength="125" />
           </div>
         </div>
         <div class="px-3 lg:px-site py-2 border-b border-slate-300 grid lg:grid-cols-[9rem_1fr] gap-2 items-center">
@@ -99,7 +100,8 @@
             </button>
           </div>
           <div v-if="errors" class="col-span-2 bg-red-200 py-2 px-4 font-bold text-red-800">
-            Hi ha hagut un error enviant el formulari. Torna-ho a intentar més tard.
+            Hi ha hagut un error enviant el formulari.
+            {{ errors.message }}
           </div>
         </div>
       </form>
