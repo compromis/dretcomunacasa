@@ -30,26 +30,42 @@
         </div>
         <div class="px-3 lg:px-site py-2 border-b border-slate-300 grid lg:grid-cols-[9rem_1fr] gap-2 items-center">
           <label class="lg:text-right">
-            E-mail
-          </label>
-          <div>
-            <input type="email" v-model="form.email" required class="bg-slate-200 py-1 px-2 font-bold w-full lg:w-auto lg:min-w-96 field-sizing-content rounded-lg placeholder-slate-500 focus:outline-orange h-[2em]" placeholder="Escriu el teu e-mail" aria-label="El teu e-mail" maxlength="125" />
-          </div>
-        </div>
-        <div class="px-3 lg:px-site py-2 border-b border-slate-300 grid lg:grid-cols-[9rem_1fr] gap-2 items-center">
-          <label class="lg:text-right">
             Nom i cognoms
           </label>
           <div>
-            <input type="text" v-model="form.name" required class="bg-slate-200 py-1 px-2 font-bold w-full lg:w-auto lg:min-w-96 field-sizing-content rounded-lg placeholder-slate-500 focus:outline-orange h-[2em]" placeholder="Escriu el teu nom i cognoms" aria-label="El teu nom i cognoms" maxlength="125" />
+            <input type="text" v-model="form.name" required class="bg-slate-200 py-1 px-2 font-bold w-full lg:w-auto lg:min-w-96 field-sizing-content rounded-lg placeholder-slate-500 focus:outline-orange h-[2em]" placeholder="Nom i cognoms" aria-label="El teu nom i cognoms" maxlength="125" />
           </div>
         </div>
         <div class="px-3 lg:px-site py-2 border-b border-slate-300 grid lg:grid-cols-[9rem_1fr] gap-2 items-center">
           <label class="lg:text-right">
-            Codi postal
+            DNI/NIE
           </label>
           <div>
-            <input type="text" v-model="form.postal_code" pattern="\d*" class="bg-slate-200 py-1 px-2 font-bold w-full lg:w-auto lg:min-w-64 field-sizing-content rounded-lg placeholder-slate-500 focus:outline-orange h-[2em]" placeholder="Escriu el teu codi postal" maxlength="5" />
+            <input type="text" v-model="form.id_card" required class="bg-slate-200 py-1 px-2 font-bold w-full lg:w-auto lg:min-w-96 field-sizing-content rounded-lg placeholder-slate-500 focus:outline-orange h-[2em]" placeholder="El teu DNI o NIE" aria-label="El teu DNI o NIE" maxlength="125" />
+          </div>
+        </div>
+        <div class="px-3 lg:px-site py-2 border-b border-slate-300 grid lg:grid-cols-[9rem_1fr] gap-2 items-center">
+          <label class="lg:text-right">
+            E-mail
+          </label>
+          <div>
+            <input type="email" v-model="form.email" required class="bg-slate-200 py-1 px-2 font-bold w-full lg:w-auto lg:min-w-96 field-sizing-content rounded-lg placeholder-slate-500 focus:outline-orange h-[2em]" placeholder="El teu e-mail" aria-label="El teu e-mail" maxlength="125" />
+          </div>
+        </div>
+        <div class="px-3 lg:px-site py-2 border-b border-slate-300 grid lg:grid-cols-[9rem_1fr] gap-2 items-center">
+          <label class="lg:text-right">
+            Telèfon
+          </label>
+          <div>
+            <input type="email" v-model="form.phone" class="bg-slate-200 py-1 px-2 font-bold w-full lg:w-auto lg:min-w-96 field-sizing-content rounded-lg placeholder-slate-500 focus:outline-orange h-[2em]" placeholder="El teu mòbil (opcional)" aria-label="El teu mòbil (opcional)" maxlength="125" />
+          </div>
+        </div>
+        <div class="px-3 lg:px-site py-2 border-b border-slate-300 grid lg:grid-cols-[9rem_1fr] gap-2 items-center">
+          <label class="lg:text-right">
+            Municipi
+          </label>
+          <div>
+            <input type="text" v-model="form.municipality" required class="bg-slate-200 py-1 px-2 font-bold w-full lg:w-auto lg:min-w-64 field-sizing-content rounded-lg placeholder-slate-500 focus:outline-orange h-[2em]" placeholder="Escriu el municipi on vius" maxlength="5" />
           </div>
         </div>
         <div class="px-3 lg:px-site py-4">
@@ -126,7 +142,9 @@ const errors = ref(null)
 const form = reactive({
   name: '',
   email: '',
-  postal_code: '',
+  id_card: '',
+  municipality: '',
+  phone: '',
   terms: false,
   control: ''
 })
