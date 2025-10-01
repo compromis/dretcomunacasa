@@ -66,7 +66,7 @@
             Municipi
           </label>
           <div>
-            <input type="text" v-model="form.municipality" required class="bg-slate-200 py-1 px-2 font-bold w-full lg:w-auto lg:min-w-64 field-sizing-content rounded-lg placeholder-slate-500 focus:outline-orange h-[2em]" placeholder="Escriu el municipi on vius" maxlength="5" />
+            <input type="text" v-model="form.municipality" required class="bg-slate-200 py-1 px-2 font-bold w-full lg:w-auto lg:min-w-64 field-sizing-content rounded-lg placeholder-slate-500 focus:outline-orange h-[2em]" placeholder="Escriu el municipi on vius" />
           </div>
         </div>
         <div class="px-3 lg:px-site py-4">
