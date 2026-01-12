@@ -2,7 +2,7 @@
   <header id="header" class="header px-site pt-24 lg:pt-32">
     <div class="w-fit mx-auto my-6 xl:my-24 text-center xl:text-left">
       <h1 class="font-headline uppercase font-normal leading-[.9]">
-        Mazón&nbsp;no fa&nbsp;res
+        El&nbsp;PP&nbsp;no fa&nbsp;res
       </h1>
       <p class="font-extrabold text-md xl:text-lg leading-snug text-balance xl:-mt-4">
         Des de 2023, la Generalitat Valenciana pot regular el preu del lloguer.
